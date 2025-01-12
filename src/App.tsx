@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import HeroImg from "./assets/images/hero-bg.jpg";
+// import HeroImg from "./assets/images/hero-bg.jpg";
 import HeroVideo from "./assets/videos/bgVideo.mp4";
 import "./App.scss";
 

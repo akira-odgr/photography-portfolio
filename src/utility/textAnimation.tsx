@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FC } from "react";
 
 // 一文字ずつ下から上へアニメーションする設定
 const SlideBottom = {
@@ -19,8 +20,12 @@ const container = {
     },
 };
 
-export const AnimatedH1 = ({ text }) => {
-    const letters = text.split(""); // 一文字ずつ分割
+interface AnimatedH1Props {
+    text: string;
+}
+
+export const AnimatedH1: FC<AnimatedH1Props> = ({ text }) => {
+    const letters: string[] = text.split(""); // 一文字ずつ分割
 
     return (
         <motion.h1
@@ -29,7 +34,7 @@ export const AnimatedH1 = ({ text }) => {
             animate="visible"
             style={{ display: "inline-block" }}
         >
-            {letters.map((char, index) => (
+            {letters.map((char: string, index: number) => (
                 <motion.span
                     key={index}
                     variants={SlideBottom} // 各文字にアニメーションを適用
