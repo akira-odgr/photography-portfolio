@@ -1,0 +1,86 @@
+@use "../../utility/globals/" as *;
+
+:root {
+    --text-dark: hsl(0, 0%, 0%);
+    --text-light: hsl(43, 6%, 44%);
+    --extra-light: hsl(175, 48%, 95%);
+    --white: hsl(0, 0%, 100%);
+    --max-width: 1200px;
+    --hero-font: "Playfair Display", serif;
+}
+
+.hero {
+    &__container {
+        display: grid;
+        padding-block: 0;
+        overflow: hidden;
+
+        @include mq("md") {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            isolation: isolate;
+        }
+    }
+
+    &__image {
+        @include mq("md") {
+            position: relative;
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            // grid-area: 1 / 2 / 2 / 3;
+            height: 100%;
+
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: unset;
+                height: 100%;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__content {
+        padding-block: 0 5rem;
+
+        h1 {
+            font-size: fluid-text(56px, 80px);
+            font-weight: 800;
+            line-height: fluid-text(72px, 96px);
+            font-family: var(--hero-font);
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: var(--hero-font);
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        &__btn {
+            text-align: center;
+
+            button {
+                text-transform: uppercase;
+            }
+        }
+
+        // width > 768px
+        @include mq("md") {
+            padding-block: 10rem;
+
+            & :is(h1, h2, &__btn) {
+                text-align: left;
+            }
+        }
+        // width > 1024px
+        @include mq("lg") {
+            padding-block: 15rem 12rem;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use "../../utility/globals/" as *;
+
+:root {
+    --text-dark: hsl(0, 0%, 0%);
+    --text-light: hsl(43, 6%, 44%);
+    --extra-light: hsl(175, 48%, 95%);
+    --white: hsl(0, 0%, 100%);
+    --max-width: 1200px;
+    --header-font: "Playfair Display", serif;
+}
+
+.about {
+    &__container {
+        display: grid;
+        gap: 2rem;
+        overflow: hidden;
+        background-color: var(--white);
+        box-shadow: 0 0 0 100vh var(--white);
+        clip-path: inset(0 -100vmax);
+
+        @include mq("md") {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+    }
+
+    &__image {
+        img {
+            max-width: 500px;
+            margin-inline: auto;
+            border-top-left-radius: 25%;
+            border-bottom-right-radius: 25%;
+        }
+    }
+
+    &__content {
+        .section__header {
+            margin-bottom: 4rem;
+
+            @include mq("md") {
+                margin-inline-start: unset;
+            }
+        }
+
+        p {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            line-height: 1.75rem;
+            text-align: center;
+        }
+
+        &__btn {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        @include mq("md") {
+            max-width: 450px;
+            margin-inline: auto;
+
+            & :is(p, &__btn) {
+                text-align: left;
+            }
+        }
+    }
+}
