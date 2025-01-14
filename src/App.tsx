@@ -7,6 +7,8 @@ import { Navbar } from "./components/Nav/Navbar";
 import { Hero } from "./components/Hero/Hero";
 import { About } from "./components/About/About";
 import { Portfolio } from "./components/Portfolio/Portfolio";
+import { Blog } from "./components/Blog/Blog";
+import { Contact } from "./components/Contact/Contact";
 
 // const bgImage: CSSProperties = {
 //     backgroundImage: `url(${HeroImg})`,
@@ -53,6 +55,8 @@ export const App = () => {
             </div>
             <About />
             <Portfolio />
+            <Blog />
+            <Contact />
         </>
     );
 };

@@ -1,0 +1,65 @@
+@use "../../utility/globals/" as *;
+
+:root {
+    --text-dark: hsl(0, 0%, 0%);
+    --text-light: hsl(43, 6%, 44%);
+    --extra-light: hsl(175, 48%, 95%);
+    --white: hsl(0, 0%, 100%);
+    --max-width: 1200px;
+    --hero-font: "Playfair Display", serif;
+}
+
+.blog {
+    &__container {
+        background-color: var(--white);
+        box-shadow: 0 0 0 100vh var(--white);
+        clip-path: inset(0 -100vmax);
+
+        .section__header {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__grid {
+        margin-bottom: 4rem;
+        display: grid;
+        gap: 3rem 2rem;
+
+        &__card {
+            h5 {
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--text-light);
+            }
+
+            h4 {
+                margin-bottom: 1rem;
+                font-size: 1.5em;
+                color: var(--text-dark);
+                font-family: var(--hero-font);
+            }
+
+            p {
+                line-height: 1.75rem;
+                color: var(--text-light);
+            }
+        }
+
+        @include mq("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__btn {
+        text-align: center;
+
+        button {
+            text-transform: uppercase;
+        }
+
+        @include mq("md") {
+            text-align: left;
+        }
+    }
+}
