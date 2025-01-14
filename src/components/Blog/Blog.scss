@@ -11,8 +11,8 @@
 
 .blog {
     &__container {
-        background-color: var(--white);
-        box-shadow: 0 0 0 100vh var(--white);
+        background-color: var(--extra-light);
+        box-shadow: 0 0 0 100vh var(--extra-light);
         clip-path: inset(0 -100vmax);
 
         .section__header {

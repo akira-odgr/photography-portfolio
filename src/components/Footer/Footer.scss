@@ -1,0 +1,63 @@
+@use "../../utility/globals/" as *;
+
+:root {
+    --text-dark: hsl(0, 0%, 0%);
+    --text-light: hsl(43, 6%, 44%);
+    --extra-light: hsl(175, 48%, 95%);
+    --white: hsl(0, 0%, 100%);
+    --max-width: 1200px;
+    --hero-font: "Playfair Display", serif;
+}
+
+.footer {
+    background-color: var(--extra-light);
+    &__container {
+        display: grid;
+        gap: 4rem;
+
+        @include mq("sm") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mq("md") {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__col {
+        .section__header {
+            margin-inline-start: unset;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.75rem;
+            color: var(--text-light);
+        }
+
+        &__socials {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            a {
+                padding: 5px 9px;
+                font-size: 1.25rem;
+                color: var(--text-light);
+                border-radius: 100%;
+
+                &:hover {
+                    background-color: var(--extra-light);
+                }
+            }
+        }
+    }
+
+    &__bar {
+        padding: 1rem;
+        color: var(--text-light);
+        text-align: center;
+    }
+}

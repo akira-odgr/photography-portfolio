@@ -1,0 +1,96 @@
+@use "../../utility/globals/" as *;
+
+:root {
+    --text-dark: hsl(0, 0%, 0%);
+    --text-light: hsl(43, 6%, 44%);
+    --extra-light: rgb(236, 248, 247);
+    --white: hsl(0, 0%, 100%);
+    --max-width: 1200px;
+    --hero-font: "Playfair Display", serif;
+}
+
+.contact {
+    &__container {
+        padding-block: 0;
+        display: grid;
+        gap: 2rem;
+        padding-block: 2rem;
+
+        @include mq("md") {
+            grid-template-columns: repeat(2, 1fr);
+            overflow: hidden;
+            padding-block: 5rem;
+        }
+    }
+
+    &__content {
+        padding: 3rem;
+        background-color: rgba(236, 248, 247, 0.2);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+
+        .section__header {
+            margin-bottom: 2rem;
+
+            @include mq("md") {
+                margin-inline-start: unset;
+            }
+        }
+
+        p {
+            margin-bottom: 2rem;
+            line-height: 1.75rem;
+            color: var(--text-dark);
+            text-align: center;
+
+            @include mq("md") {
+                text-align: left;
+            }
+        }
+
+        .input__row {
+            @include mq("sm") {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+
+        form {
+            input {
+                width: 100%;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid var(--text-dark);
+                background-color: transparent;
+
+                &::placeholder {
+                    color: var(--text-dark);
+                }
+            }
+        }
+
+        .btn {
+            margin-top: 2rem;
+        }
+    }
+
+    &__image {
+        display: none;
+
+        @include mq("md") {
+            position: relative;
+            display: flex;
+            isolation: isolate;
+
+            img {
+                position: absolute;
+                top: -12%;
+                left: 50%;
+                translate: -50% 0;
+                max-width: 450px;
+            }
+        }
+    }
+}

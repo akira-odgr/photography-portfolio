@@ -1,5 +1,4 @@
 import { CSSProperties } from "react";
-// import HeroImg from "./assets/images/hero-bg.jpg";
 import HeroVideo from "./assets/videos/bgVideo.mp4";
 import "./App.scss";
 
@@ -9,14 +8,7 @@ import { About } from "./components/About/About";
 import { Portfolio } from "./components/Portfolio/Portfolio";
 import { Blog } from "./components/Blog/Blog";
 import { Contact } from "./components/Contact/Contact";
-
-// const bgImage: CSSProperties = {
-//     backgroundImage: `url(${HeroImg})`,
-//     backgroundRepeat: "no-repeat",
-//     backgroundPosition: "bottom",
-//     backgroundSize: "cover",
-//     position: "relative",
-// };
+import { Footer } from "./components/Footer/Footer";
 
 const bgContainer: CSSProperties = {
     position: "relative",
@@ -35,12 +27,6 @@ const bgVideo: CSSProperties = {
 export const App = () => {
     return (
         <>
-            {/* image */}
-            {/* <div style={bgImage}>
-                <Navbar />
-                <Hero />
-            </div> */}
-
             {/* video */}
             <div style={bgContainer}>
                 <video
@@ -57,6 +43,7 @@ export const App = () => {
             <Portfolio />
             <Blog />
             <Contact />
+            <Footer />
         </>
     );
 };

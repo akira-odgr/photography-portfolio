@@ -14,8 +14,8 @@
         display: grid;
         gap: 2rem;
         overflow: hidden;
-        background-color: var(--white);
-        box-shadow: 0 0 0 100vh var(--white);
+        background-color: var(--extra-light);
+        box-shadow: 0 0 0 100vh var(--extra-light);
         clip-path: inset(0 -100vmax);
 
         @include mq("md") {
@@ -30,6 +30,7 @@
             margin-inline: auto;
             border-top-left-radius: 25%;
             border-bottom-right-radius: 25%;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
         }
     }
 
